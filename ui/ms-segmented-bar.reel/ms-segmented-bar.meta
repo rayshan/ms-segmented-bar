@@ -1,0 +1,49 @@
+{
+  "blueprint_component_reference": {
+    "prototype": "montage/core/meta/blueprint-reference",
+    "properties": {
+      "valueReference": {
+        "blueprintName": "Component",
+        "blueprintModule": {
+          "%": "montage/ui/component.meta"
+        }
+      }
+    }
+  },
+  "blueprint_unnamed_axis": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "axis",
+      "blueprint": {"@": "root"}
+    }
+  },
+  "blueprint_unnamed__max": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "_max",
+      "blueprint": {"@": "root"},
+      "valueType": "number"
+    }
+  },
+  "root": {
+    "prototype": "montage/core/meta/module-blueprint",
+    "properties": {
+      "name": null,
+      "parent": {"@": "blueprint_component_reference"},
+      "propertyBlueprints": [
+        {"@": "blueprint_unnamed_axis"},
+        {"@": "blueprint_unnamed__max"}
+      ],
+      "propertyBlueprintGroups": {
+        "MsSegmentedBar": [
+          {"@": "blueprint_unnamed_axis"},
+          {"@": "blueprint_unnamed__max"}
+        ]
+      },
+      "module": {
+        "%": "ui/ms-segmented-bar.reel"
+      },
+      "exportName": "MsSegmentedBar"
+    }
+  }
+}
